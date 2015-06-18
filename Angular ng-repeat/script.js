@@ -20,7 +20,7 @@
       .then(onUserComplete,onError);
     };
     
-  $scope.username = "ODETOCODE";
+  $scope.username = "Angular";
   };
   
   myApp.controller("MainController",["$scope","$http",MainController]);
