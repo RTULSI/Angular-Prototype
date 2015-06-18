@@ -1,0 +1,35 @@
+<div ng-hide="!username">
+<a href="#/main">Back to Search</a>
+  <div>
+    Name:{{user.name}}
+    <span>{{error}}</span>
+    <br>Location:{{user.location}}
+    <br>Username: {{username}}
+
+    <br>Order:
+    <br>
+    <select ng-model="order">
+      <option value="+name">Name</option>
+      <option value="+language">Language</option>
+      <option value="-stargazers_count">Stars</option>
+    </select>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Language</th>
+        <th>Stars</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="repo in repos | orderBy: order">
+        <td>{{repo.name}}</td>
+        <td>{{repo.language}}</td>
+        <td>{{repo.stargazers_count| number}}</td>
+      </tr>
+    </tbody>
+  </table>
+  
+</div>

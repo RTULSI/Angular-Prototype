@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <script src="https://code.angularjs.org/1.3.9/angular.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+
+  <body ng-app="myApp" ng-controller="MainController">
+    <div>
+      <h1>{{message}}</h1>
+    </div>
+    {{username}}
+    <div>  <input type="search" placeholder="" ng-model="username"> 
+    <input type="button" ng-click="search(username)" value="search">
+   <span> {{error}}</span> </div>
+    <div ng-show="users">
+      Name: {{users.name}} <br/>
+      Location:{{users.location}}
+    </div>
+    <table ng-hide="!users">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Language</th>
+          <th>Stars</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="repos in repo">
+          <td>{{repos.name}}</td>
+          <td>{{repos.language}}</td>
+          <td>{{repos.stargazers_count|number}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+
+</html>
