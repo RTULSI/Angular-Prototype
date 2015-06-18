@@ -1,0 +1,44 @@
+<!Doctype html>
+<html ng-app="myApp">
+	<head>
+		<title></title>
+		<script src="angular.min.js"></script>
+		<script src="script.js"></script>
+	</head>
+	<body ng-controller="MainController">
+			<h1>{{message}}</h1>
+			<p>Enter Student Name: <input type="text" ng-model="studentName"></p>
+			<p>Degree: <input type="text" ng-model="studentDegree"></p>
+			<p>Marks: <input type="number" ng-model="studentMarks"></p>
+			<button ng-click="addStudentsData()">Student Details</button>
+			
+			<select ng-model="selectedDegree" ng-change="getStudentsDetails()">
+				<option ng-repeat="d in degree">{{d.DegreeName}}</option>
+			</select>
+
+			<!-- <ul>
+				<li ng-repeat="student in students">{{student.StudentName}}</li>
+			</ul> -->
+
+			<!-- <button ng-click="getStudentsDetails()">Get Student Details</button> -->
+
+			<table border="1">
+				<thead>
+					<tr>
+					<th>Name</th>
+					<th>Degree</th>
+					<th>Marks</th>
+					<th>Grade</th>
+				</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="student in students">
+					<td>{{student.StudentName | uppercase}}</td>
+					<td>{{student.DegreeName | lowercase}}</td>
+					<td>{{student.StudentMarks}}</td>
+					<td>{{student.StudentMarks | Grade}}</td>
+				</tr>
+				</tbody>
+			</table>
+	</body>
+</html>

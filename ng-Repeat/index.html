@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+  <head>
+    <title></title>
+    <script src="angular.min.js"></script>
+    <script src="script.js"></script>
+  </head>
+
+  <body>
+    <div ng-controller="MainController">
+      <h1>{{message}}</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Number</th>
+            <th>Percentage</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="s in students">
+            <td>{{s.Name|uppercase}}</td>
+            <td>{{s.Number}}</td>
+            <td>{{s.Percentage}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+
+</html>

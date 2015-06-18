@@ -1,0 +1,17 @@
+[
+	{
+	"Name" : "Rohit",
+	"Number" : 1,
+	"Percentage": "90%"
+	},
+	{
+	"Name" : "Sravya",
+	"Number" : 2,
+	"Percentage": "80%"
+	},
+	{
+	"Name" : "Bhavesya",
+	"Number" : 3,
+	"Percentage": "70%"
+	}
+]
